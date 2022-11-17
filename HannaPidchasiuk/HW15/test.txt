@@ -1,3 +1,0 @@
-name,surname,age,salary
-Bohdan,Dovbysh,28,100
-Hanna,Pidchasiuk,22,100
