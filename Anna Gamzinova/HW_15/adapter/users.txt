@@ -1,3 +1,0 @@
-first_name,second_name,age,gender
-Rachel,Green,30,Female
-Ross,Geller,31,Male,
