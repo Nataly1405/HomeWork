@@ -1,2 +1,0 @@
-Name,Surname,Age,Salary
-Oleksii,Fedorchuk,27,100
