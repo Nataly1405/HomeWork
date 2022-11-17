@@ -1,4 +1,0 @@
-first_name,second_name,age,gender,salary
-Bohdan,Dovbysh,28,Male,100
-Peter,Griffin,45,Male,200
-Liza,Simpson,10,Female,300

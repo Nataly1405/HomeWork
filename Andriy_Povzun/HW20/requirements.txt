@@ -1,2 +1,0 @@
-pytest
-pytest-faker==2.0.0
