@@ -1,3 +1,0 @@
-name,surname,age,salary
-John,Doe,28,10000
-Martha,Rich,32,15000
