@@ -1,4 +1,0 @@
-first_name,second_name,age,gender
-Bohdan,Dovbysh,28,male
-Peter,Griffin,45,male
-Liza,Simpson,10,male
