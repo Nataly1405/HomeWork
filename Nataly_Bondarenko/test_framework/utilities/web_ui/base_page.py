@@ -1,10 +1,13 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from faker import Faker
+
+faker = Faker()
 
 
 class BasePage:
-    def __next__(self, driver):
+    def __init__(self, driver):
         self._driver = driver
         self.__wait = WebDriverWait(self._driver, 5)
 
@@ -29,7 +32,6 @@ class BasePage:
 
     def click(self, locator):
         element = self.wait_until_clickable(locator)
-        # element = self.__wait.until(EC.element_to_be_clickable(locator))
         element.click()
 
     def is_displayed(self, locator):
@@ -38,3 +40,12 @@ class BasePage:
             return True
         except TimeoutException:
             raise False
+
+    def is_displayed_error_message(self, locator, error_msg):
+        try:
+            self.wait_until_element_visible(locator)
+            return True
+        except TimeoutException:
+            raise False
+
+
