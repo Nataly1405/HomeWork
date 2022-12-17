@@ -6,6 +6,7 @@ username_input = (By.XPATH, '//*[@id="user-name"]')
 password_input = (By.XPATH, '//*[@id="password"]')
 login_button = (By.XPATH, '//*[@id="login-button"]')
 error_message = (By.XPATH, '//*[@data-test="error"]')
+error_message_invalid_login = (By.XPATH, '//button [@class="error-button" and text()]]')
 
 
 # Main Page
@@ -24,11 +25,13 @@ filtered_by_price_from_high_to_low = (By.XPATH, '//*[@value="hilo"]')
 first_item_on_the_main_page = (By.XPATH, '//*[@alt="Sauce Labs Backpack"]')
 logout = (By.XPATH, '//*[@id="logout_sidebar_link"]')
 reset_sidebar_link = (By.XPATH, '//*[@id="logout_sidebar_link"]')
+number_of_items_in_cart = (By.XPATH, '//span [@class="shopping_cart_badge" and text()]')
 
 # Item Page
 add_to_cart_on_item_page = (By.XPATH, '//*[@class="btn btn_primary btn_small btn_inventory"]')
 remove_on_item_page = (By.XPATH, '//*[@class="btn btn_secondary btn_small btn_inventory"]')
 cart_link_on_item_page = (By.XPATH, '//*[@class="shopping_cart_link"]')
+first_item_name_on_page = (By.XPATH, '//*[@class="inventory_details_name large_size"]')
 
 # Cart Page
 cart_page_title = (By.XPATH, '//*[@class ="title"]')
@@ -47,9 +50,9 @@ last_name_input = (By.XPATH, '//*[@id="last-name"]')
 zip_input = (By.XPATH, '//*[@id="postal-code"]')
 data_error = (By.XPATH, '//*[@data-test="error"]')
 error = (By.XPATH, '//*[@class="error-button"]')
-error_message_checkout_inf_empty_values = (By.XPATH, '//*[@data-test="error"]')
 cancel_button = (By.XPATH, '//*[@id="cancel"]')
 continue_button = (By.XPATH, '//*[@id="continue"]')
+error_massage = (By.XPATH, '//button [@class="error-button" and text()]')
 
 # Overview page: payment
 payment_information = (By.XPATH, '//*[@class="summary_value_label"]')

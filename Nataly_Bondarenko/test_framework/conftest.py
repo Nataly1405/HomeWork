@@ -1,10 +1,20 @@
 import pytest
+import json
 
+from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.CONSTANTS import ROOT_DIR
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.page_objects.item_page import ItemPage
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.page_objects.login_page import LoginPage
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.page_objects.main_page import MainPage
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.utilities.config_parser import ReadConfig
+from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.utilities.configurations import Configurations
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.utilities.driver_factory import DriverFactory
+
+
+@pytest.fixture()
+def env():
+    with open(f'{ROOT_DIR}/configurations/configurations.json') as file:
+        env_dict = json.loads(file.read())
+    return Configurations(**env_dict)
 
 
 @pytest.fixture()
@@ -27,7 +37,10 @@ def open_main_page(open_login_page):
 
 
 @pytest.fixture()
-def return_main_page(create_driver):
+def init_main_page(create_driver):
+    """
+    This function initializes the main page in order to avoid circular import
+    """
     return MainPage(create_driver)
 
 
@@ -38,7 +51,10 @@ def open_item_page(open_main_page):
 
 
 @pytest.fixture()
-def return_item_page(create_driver):
+def init_item_page(create_driver):
+    """
+    This function initializes the item page in order to avoid circular import
+    """
     return ItemPage(create_driver)
 
 

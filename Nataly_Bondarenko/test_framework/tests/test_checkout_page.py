@@ -4,14 +4,13 @@ from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.utilities.config_par
 
 @pytest.mark.regression
 @pytest.mark.checkout
-def test_set_values_and_continue(open_checkout_page):
+def test_set_values_and_continue(open_checkout_page, env):
     """
     A method to verify that we are able to go to the overview page from the checkout page
     """
     overview_page = open_checkout_page. \
-        set_checkout_info(ReadConfig.get_first_name(), ReadConfig.get_last_name(),
-                          ReadConfig.get_zip()).click_continue_button()
-    assert overview_page.is_payment_information_is_displayed() is True, \
+        set_checkout_info(env.first_name, env.last_name, env.zip).click_continue_button()
+    assert overview_page.is_payment_information_displayed() is True, \
         "User didn't succeed to forwarded to overview page"
 
 
@@ -33,7 +32,7 @@ def test_invalid_checkout_empty_values(open_checkout_page, first_name_value, las
     checkout_page = open_checkout_page
     checkout_page.set_first_name(first_name_value).set_last_name(last_name_value).set_zip(zip_value). \
         click_continue_button()
-    assert checkout_page.is_invalid_checkout_empty_values_error_message_displayed() is True, \
+    assert checkout_page.error_message_on_invalid_checkout("Error: First Name is required") is True, \
         "Error message on empty values or empty username only, was not displayed"
 
 
@@ -54,7 +53,7 @@ def test_invalid_checkout_empty_last_name(open_checkout_page, first_name_value, 
     checkout_page = open_checkout_page
     checkout_page.set_first_name(first_name_value).set_last_name(last_name_value).set_zip(zip_value). \
         click_continue_button()
-    assert checkout_page.is_invalid_checkout_empty_last_name_error_message_displayed() is True, \
+    assert checkout_page.error_message_on_invalid_checkout("Error: Last Name is required") is True, \
         "Error message on empty last name value was not displayed"
 
 
@@ -69,7 +68,7 @@ def test_invalid_checkout_empty_zip(open_checkout_page):
     checkout_page = open_checkout_page
     checkout_page.set_first_name(f'{ReadConfig.get_first_name()}').set_last_name(f'{ReadConfig.get_last_name}') \
         .set_zip("").click_continue_button()
-    assert checkout_page.is_invalid_checkout_empty_zip_error_message_displayed() is True, \
+    assert checkout_page.error_message_on_invalid_checkout("Error: Postal Code is required") is True, \
         "Error message on empty zip value was not displayed"
 
 
@@ -79,10 +78,9 @@ def test_logout_from_checkout_page(open_checkout_page, open_login_page):
     """
     A method to verify that we are able to logout from the checkout page
     """
-    checkout_page = open_checkout_page
-    checkout_page.click_menu_button().click_logout_button()
+    open_checkout_page.click_menu_button().click_logout_button()
     login_page = open_login_page
-    assert login_page.is_login_button_is_displayed() is True, "The logout button from checkout page doesn't work"
+    assert login_page.is_login_button_displayed() is True, "The logout button from checkout page doesn't work"
 
 
 @pytest.mark.regression
@@ -91,7 +89,6 @@ def test_go_to_cart_page_over_cart_link(open_checkout_page, open_cart_page):
     """
     A method to verify that we are able to go back to the cart page over cart link from the checkout page
     """
-    checkout_page = open_checkout_page
-    checkout_page.click_cart_button()
+    open_checkout_page.click_cart_button()
     cart_page = open_cart_page
-    assert cart_page.is_cart_item_is_displayed() is True, "The cart link from checkout page doesn't work"
+    assert cart_page.is_cart_item_displayed() is True, "The cart link from checkout page doesn't work"

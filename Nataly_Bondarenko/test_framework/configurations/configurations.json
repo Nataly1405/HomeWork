@@ -1,0 +1,11 @@
+{
+  "base_url": "https://www.saucedemo.com",
+  "user_name": "standard_user",
+  "password": "secret_sauce",
+  "browser_id": "1",
+  "is_headless": "True",
+  "debug_mode": "False",
+  "first_name": "Nataly",
+  "last_name": "Bondarenko",
+  "zip": "336699"
+}

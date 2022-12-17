@@ -20,6 +20,9 @@ class BasePage:
     def wait_until_element_visible(self, locator):
         return self.__wait.until(EC.visibility_of_element_located(locator))
 
+    def wait_until_element_value(self, locator, text):
+        return self.__wait.until(EC.text_to_be_present_in_element(locator, text))
+
     def element_visible(self, locator):
         return self._driver.find_elements(locator)
 
@@ -41,11 +44,9 @@ class BasePage:
         except TimeoutException:
             raise False
 
-    def is_displayed_error_message(self, locator, error_msg):
+    def is_located(self, locator):
         try:
-            self.wait_until_element_visible(locator)
+            self.wait_until_element_located(locator)
             return True
         except TimeoutException:
-            raise False
-
-
+            return False
