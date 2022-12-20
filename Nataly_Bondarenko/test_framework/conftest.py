@@ -5,7 +5,6 @@ from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.CONSTANTS import ROO
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.page_objects.item_page import ItemPage
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.page_objects.login_page import LoginPage
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.page_objects.main_page import MainPage
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.utilities.config_parser import ReadConfig
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.utilities.configurations import Configurations
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.utilities.driver_factory import DriverFactory
 
@@ -79,10 +78,4 @@ def open_checkout_page(open_cart_page_with_item):
     return checkout_page
 
 
-# @pytest.fixture()
-# def open_overview_page(open_checkout_page, env):
-#     checkout_page = open_checkout_page
-#     checkout_page.set_checkout_info(env.first_name, env.last_name, env.zip)
-#     overview_page = checkout_page.click_continue_button()
-#     return overview_page
 
