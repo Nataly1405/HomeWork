@@ -14,6 +14,16 @@ def test_set_values_and_continue(open_checkout_page, env):
         "User didn't succeed to forwarded to overview page"
 
 
+def test_set_values_and_continue_test(open_checkout_page, env):
+    """
+    A method to verify that we are able to go to the overview page from the checkout page
+    """
+    overview_page = open_checkout_page. \
+        set_checkout_info(env.first_name, env.last_name, env.zip).click_continue_button()
+    assert overview_page.is_payment_information_displayed() is True, \
+        "User didn't succeed to forwarded to overview page"
+
+
 @pytest.mark.regression
 @pytest.mark.checkout
 @pytest.mark.parametrize("first_name_value, last_name_value, zip_value",
@@ -59,15 +69,14 @@ def test_invalid_checkout_empty_last_name(open_checkout_page, first_name_value, 
 
 @pytest.mark.regression
 @pytest.mark.checkout
-def test_invalid_checkout_empty_zip(open_checkout_page):
+def test_invalid_checkout_empty_zip(open_checkout_page, env):
     """
     A method to verify that we are not able to go to the overview page from the checkout page
      if the zip code field is empty
      Expected result: error msg with text: "Error: Postal Code is required"
     """
     checkout_page = open_checkout_page
-    checkout_page.set_first_name(f'{ReadConfig.get_first_name()}').set_last_name(f'{ReadConfig.get_last_name}') \
-        .set_zip("").click_continue_button()
+    checkout_page.set_first_name(env.first_name).set_last_name(env.last_name).set_zip("").click_continue_button()
     assert checkout_page.error_message_on_invalid_checkout("Error: Postal Code is required") is True, \
         "Error message on empty zip value was not displayed"
 

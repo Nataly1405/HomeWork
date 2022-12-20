@@ -32,29 +32,28 @@ def test_invalid_login_empty_values(open_login_page, user_name_value, password_v
 
 @pytest.mark.regression
 @pytest.mark.login
-def test_invalid_login_empty_password(open_login_page):
+def test_invalid_login_empty_password(open_login_page, env):
     """
     A method to verify error message on invalid login if:
             1. Only field: "Password"  is empty
     Expected result: we got error msg with text: "Epic sadface: Password is required"
     """
     login_page = open_login_page
-    login_page.set_user_name(f'{ReadConfig.get_user_name()}').set_password("").click_login_button()
+    login_page.set_user_name(env.user_name).set_password("").click_login_button()
     assert login_page.error_message_on_invalid_login("Epic sadface: Password is required") is True, \
         "Error message on empty password was not displayed"
 
 
 @pytest.mark.regression
 @pytest.mark.login
-def test_error_message_on_locked_out_user(open_login_page):
+def test_error_message_on_locked_out_user(open_login_page, env):
     """
     A method to verify error message for locked out user:
             1. Enter "locked_out_user_name" and "password"
     Expected result: we got error msg with text: "Epic sadface: Sorry, this user has been locked out"
     """
     login_page = open_login_page
-    login_page.set_user_name(f'{ReadConfig.get_locked_out_user_name()}'). \
-        set_password(f'{ReadConfig.get_password()}').click_login_button()
+    login_page.set_user_name(env.locked_out_user_name).set_password(env.password).click_login_button()
     assert login_page.error_message_on_invalid_login("Epic sadface: Sorry, this user has been locked out") is True, \
         "Error message for locked out user was not displayed"
 

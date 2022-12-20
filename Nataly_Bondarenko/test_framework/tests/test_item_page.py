@@ -20,7 +20,6 @@ def test_back_to_products_from_item_page(init_main_page, open_item_page):
     """
     main_page = init_main_page
     open_item_page.click_back_to_products()
-    #assert maim_page.is_item_page_displayed() is True, "The button `Back to products` on item page doesn't work"
     assert main_page.is_first_item_located() is True, "The button `Back to products` on item page doesn't work"
 
 

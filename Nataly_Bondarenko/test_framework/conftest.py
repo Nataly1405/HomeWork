@@ -18,10 +18,10 @@ def env():
 
 
 @pytest.fixture()
-def create_driver():
-    driver = DriverFactory.create_driver(driver_id=ReadConfig.get_browser_id())
+def create_driver(env):
+    driver = DriverFactory.create_driver(driver_id=env.browser_id)
     driver.maximize_window()
-    driver.get(ReadConfig.get_base_url())
+    driver.get(env.base_url)
     yield driver
     driver.quit()
 
@@ -32,8 +32,8 @@ def open_login_page(create_driver):
 
 
 @pytest.fixture()
-def open_main_page(open_login_page):
-    return open_login_page.login(ReadConfig.get_user_name(), ReadConfig.get_password())
+def open_main_page(open_login_page, env):
+    return open_login_page.login(env.user_name, env.password)
 
 
 @pytest.fixture()
@@ -79,9 +79,10 @@ def open_checkout_page(open_cart_page_with_item):
     return checkout_page
 
 
-@pytest.fixture()
-def open_overview_page(open_checkout_page):
-    checkout_page = open_checkout_page
-    checkout_page.set_checkout_info(ReadConfig.get_first_name(), ReadConfig.get_last_name(), ReadConfig.get_zip())
-    overview_page = checkout_page.click_continue_button()
-    return overview_page
+# @pytest.fixture()
+# def open_overview_page(open_checkout_page, env):
+#     checkout_page = open_checkout_page
+#     checkout_page.set_checkout_info(env.first_name, env.last_name, env.zip)
+#     overview_page = checkout_page.click_continue_button()
+#     return overview_page
+
