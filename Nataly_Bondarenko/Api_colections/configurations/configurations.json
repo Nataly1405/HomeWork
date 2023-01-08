@@ -2,10 +2,13 @@
   "base_url": "https://gorest.co.in/",
   "Api_Key": "66100006d0b2e2b19ec075a81dd4cff53303499619cf7339adbcfc3cf96a4fda",
   "name1" : "Bob Funduc",
-  "name2" : "Lisa Miller",
+  "name2" : "Mr.Grinch",
   "gender1": "male",
-  "gender2": "female",
+  "gender2": "male",
   "email1": "bobfun@gmail.com",
-  "email2": "miller.s@gmail.com",
-  "status": "active"
+  "email2": "mr.grinch@gmail.com",
+  "status": "active",
+  "name3": "Rina Kavun",
+  "gender3": "female",
+  "email3": "kavun.r@gmail.com"
 }

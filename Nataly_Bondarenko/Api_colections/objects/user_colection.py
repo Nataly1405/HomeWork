@@ -1,5 +1,4 @@
 import json
-from os import path
 
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.utilities.base_api import BaseApi
 
@@ -21,12 +20,7 @@ class UserApi(BaseApi):
         return self.get(f'{self.__user_url}')
 
     def update_user(self, user_id: int, user_data: dict):
-        response = self.patch(url=path.join(self.__user_url, str(user_id)), body=user_data)
-        return response
-
-    # def delete_user(self, user_id: int):
-    #     return self.delete(url=f'{self.__user_url}{user_id}')
+        return self.patch(url=f'{self.__user_url}/{user_id}', body=user_data)
 
     def delete_user(self, user_id: int):
-        response = self.delete(url=path.join(self.__user_url, str(user_id)))
-        return response
+        return self.delete(url=f'{self.__user_url}/{user_id}')

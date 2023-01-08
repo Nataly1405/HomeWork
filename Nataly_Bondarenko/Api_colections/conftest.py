@@ -17,3 +17,5 @@ def env():
 def delete_last_user():
     response = UserApi().get_list_of_users()
     UserApi().delete_user(user_id=response.json()[0]['id'])
+
+
