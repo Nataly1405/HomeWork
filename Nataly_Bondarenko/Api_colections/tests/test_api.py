@@ -2,11 +2,10 @@ from http import HTTPStatus
 
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.configurations.data.user_data import User
 from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.objects.user_colection import UserApi
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.conftest import delete_last_user
 
 
 def test_get_user():
-    response = UserApi().get_user(274)
+    response = UserApi().get_user(319)
     print(response.json())
     assert response.status_code == HTTPStatus.OK, f'Status code is not as expected\n Actual: {response.status_code}' \
                                                   f'\nExpected: {HTTPStatus.OK}'
@@ -77,3 +76,10 @@ def test_keys():
     person_keys = response.json()[0].keys()
     dict_keys = {'id': '', 'name': '', 'email': '', 'gender': '', 'status': ''}
     assert person_keys == dict.keys(dict_keys), f'Dictionary keys are incorrect'
+
+
+def test_keys_fail():
+    response = UserApi().get_list_of_users()
+    person_keys = response.json()[0].keys()
+    dict_keys = {'id': '', 'name': '', 'email': '', 'gender': '', 'status': ''}
+    assert person_keys != dict.keys(dict_keys), f'This test should fail'
