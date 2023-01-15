@@ -76,6 +76,3 @@ def open_checkout_page(open_cart_page_with_item):
     cart_page = open_cart_page_with_item
     checkout_page = cart_page.go_to_checkout()
     return checkout_page
-
-
-
