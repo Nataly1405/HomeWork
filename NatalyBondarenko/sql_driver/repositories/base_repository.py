@@ -16,7 +16,6 @@ class BaseRepository:
             raise ValueError("UndefinedTable")
 
     def __del__(self):
-        if self._connection:
-            if self._cursor:
-                self._cursor.close()
-            self._connection.close()
+        if self._cursor:
+            self._cursor.close()
+
