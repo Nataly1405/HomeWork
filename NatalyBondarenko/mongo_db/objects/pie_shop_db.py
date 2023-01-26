@@ -1,5 +1,3 @@
-import pymongo
-
 from Auto_Lessons.HomeWork.NatalyBondarenko.mongo_db.objects.base_db import BaseDb
 
 

@@ -1,6 +1,7 @@
 from Auto_Lessons.HomeWork.NatalyBondarenko.mongo_db.objects.pie_shop_db import PieShopDb
 
 pie = PieShopDb()
+
 pie.insert_many_values(
     (["RedBomb", "cherry", 25],
      ["BlackFriday", "Blueberry", 37],

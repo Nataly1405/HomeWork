@@ -11,7 +11,7 @@ class BaseDb:
     def insert_many_values(self, new_tuple: tuple):
         """
             A method to insert values in collection.
-            list should be filled with dicts, with such format {'name': new_name, 'filling: new_filling, 'price':
+                list should be filled with dicts, with such format {'name': new_name, 'filling: new_filling, 'price':
             price}
         """
         self.collection.insert_many([{'pie_name': insert_i[0], 'filling': insert_i[1], 'price': insert_i[2]}
