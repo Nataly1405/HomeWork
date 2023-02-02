@@ -2,13 +2,16 @@ import pytest
 import json
 
 #from NatalyBondarenko.test_framework.CONSTANTS import ROOT_DIR
-
-from NatalyBondarenko.test_framework.page_objects.item_page import ItemPage
-from NatalyBondarenko.test_framework.page_objects.login_page import LoginPage
+#from NatalyBondarenko.test_framework.page_objects.item_page import ItemPage
+#from NatalyBondarenko.test_framework.page_objects.login_page import LoginPage
 from NatalyBondarenko.test_framework.page_objects.main_page import MainPage
 from NatalyBondarenko.test_framework.utilities.configurations import Configurations
 from NatalyBondarenko.test_framework.utilities.driver_factory import DriverFactory
 from NatalyBondarenko.test_framework.CONSTANTS import ROOT_DIR
+
+from NatalyBondarenko.test_framework.page_objects.item_page import ItemPage
+
+from NatalyBondarenko.test_framework.page_objects.login_page import LoginPage
 
 
 @pytest.fixture()
