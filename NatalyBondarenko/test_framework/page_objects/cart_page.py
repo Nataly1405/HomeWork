@@ -4,12 +4,11 @@ import allure
 
 from NatalyBondarenko.test_framework.page_objects.checkout_page import CheckoutPage
 from NatalyBondarenko.test_framework.page_objects.item_page import ItemPage
-from NatalyBondarenko.test_framework.utilities.decorators import auto_add_step
 from NatalyBondarenko.test_framework.utilities.web_ui.base_page import BasePage
 from NatalyBondarenko.test_framework.page_objects.locators import locators_Xpath
 
 
-@auto_add_step
+
 class CartPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
