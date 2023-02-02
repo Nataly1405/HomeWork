@@ -1,7 +1,7 @@
 from http import HTTPStatus
 
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.configurations.data.user_data import User
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.objects.user_colection import UserApi
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.configurations.data.user_data import User
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.objects.user_colection import UserApi
 
 
 def test_get_user():

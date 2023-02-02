@@ -1,7 +1,7 @@
 import requests
 
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.configurations.config_file import BASE_URL, API_KEY
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.utilities.decorators import auto_add_step
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.configurations.config_file import BASE_URL, API_KEY
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.utilities.decorators import auto_add_step
 
 
 @auto_add_step
