@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from Auto_Lessons.HomeWork.NatalyBondarenko.test_framework.page_objects.locators import locators_Xpath
-from Auto_Lessons.HomeWork.NatalyBondarenko.test_framework.page_objects.overview_page import OverviewPage
-from Auto_Lessons.HomeWork.NatalyBondarenko.test_framework.utilities.decorators import auto_add_step
-from Auto_Lessons.HomeWork.NatalyBondarenko.test_framework.utilities.web_ui.base_page import BasePage
+from NatalyBondarenko.test_framework.page_objects.locators import locators_Xpath
+from NatalyBondarenko.test_framework.page_objects.overview_page import OverviewPage
+from NatalyBondarenko.test_framework.utilities.decorators import auto_add_step
+from NatalyBondarenko.test_framework.utilities.web_ui.base_page import BasePage
 from typing import Union
 
 

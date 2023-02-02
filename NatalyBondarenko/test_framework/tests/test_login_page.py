@@ -1,5 +1,5 @@
 import pytest
-from Auto_Lessons.HomeWork.NatalyBondarenko.test_framework.utilities.config_parser import ReadConfig
+from NatalyBondarenko.test_framework.utilities.config_parser import ReadConfig
 
 
 @pytest.mark.regression
