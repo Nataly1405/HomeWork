@@ -1,5 +1,5 @@
 import configparser
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.CONSTANTS import ROOT_DIR
+from Auto_Lessons.HomeWork.NatalyBondarenko.test_framework.CONSTANTS import ROOT_DIR
 
 config = configparser.RawConfigParser()
 config.read(f'{ROOT_DIR}/configurations/configuration.ini')

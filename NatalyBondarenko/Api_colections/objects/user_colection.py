@@ -1,7 +1,7 @@
 import json
 
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.utilities.base_api import BaseApi
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.utilities.decorators import auto_add_step
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.utilities.base_api import BaseApi
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.utilities.decorators import auto_add_step
 
 
 @auto_add_step

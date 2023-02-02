@@ -1,5 +1,5 @@
 import pytest
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.test_framework.utilities.config_parser import ReadConfig
+from Auto_Lessons.HomeWork.NatalyBondarenko.test_framework.utilities.config_parser import ReadConfig
 
 
 @pytest.mark.regression
@@ -14,6 +14,8 @@ def test_set_values_and_continue(open_checkout_page, env):
         "User didn't succeed to forwarded to overview page"
 
 
+@pytest.mark.regression
+@pytest.mark.checkout
 def test_set_values_and_continue_test(open_checkout_page, env):
     """
     A method to verify that we are able to go to the overview page from the checkout page

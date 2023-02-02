@@ -1,9 +1,9 @@
 import pytest
 import json
 
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.CONSTANTS import ROOT_DIR
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.objects.user_colection import UserApi
-from Auto_Lessons.HomeWork.Nataly_Bondarenko.Api_colections.utilities.config_parser import Configurations
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.CONSTANTS import ROOT_DIR
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.objects.user_colection import UserApi
+from Auto_Lessons.HomeWork.NatalyBondarenko.Api_colections.utilities.config_parser import Configurations
 
 
 @pytest.fixture()
